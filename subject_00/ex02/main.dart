@@ -53,15 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(
           '$count',
-          style: Theme.of(context).textTheme.headline4,
+          style: TextStyle(fontSize: 30, color: Colors.black),
         ),
         TextButton(
           onPressed: () {
             _incrementCount();
-            print(count);
             if (count == 42) {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text('climbing lover')));
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('climbing lover')));
             }
           },
           style: TextButton.styleFrom(
