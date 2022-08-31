@@ -45,7 +45,7 @@ class RandonWords extends StatefulWidget {
 }
 
 class _RandonWordsState extends State<RandonWords> {
-  final _suggestions = <WordPair>[]; // NEW
+  final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18);
 
   @override
@@ -53,8 +53,6 @@ class _RandonWordsState extends State<RandonWords> {
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, i) {
-        if (i.isOdd) return const Divider();
-
         final index = i ~/ 2; // ~/ 는 뒤에 오는 수로 나눈뒤 정수 반환
         if (index >= _suggestions.length) {
           _suggestions.addAll(generateWordPairs().take(10));
